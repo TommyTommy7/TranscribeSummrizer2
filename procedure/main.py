@@ -2,6 +2,7 @@
 import os
 from glob import glob
 from dotenv import load_dotenv
+import time
 
 # %%
 # ------------------------------------------------------------
@@ -36,6 +37,7 @@ def main():
     # 音声ファイルの数だけループして処理
     # ------------------------------------------------------
     for file_path in source_files:
+        start_time = time.perf_counter()    # 開始時間を記録
         # ファイル名を取得
         file_name = os.path.basename(file_path)
         print(f"-- << Processing file: {file_name} >> --")
@@ -59,7 +61,10 @@ def main():
         summarize_file_path = os.path.join(out_summarize_path, f"summary_{file_name}.txt")
         with open(summarize_file_path, "w", encoding="utf-8") as f:
             f.write(summarize_data)
+
         print("finish!!\n")
+        elapsed_time = time.perf_counter() - start_time  # 経過時間を計算
+        print(f"処理時間: {elapsed_time:.2f}秒\n")
 
 # %%
 # ----------------------------------------------------------

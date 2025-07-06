@@ -25,7 +25,8 @@ logs/
 *.out
 
 # ソースの音声データファイルのフォルダ内の音声ファイル
-speech_source/*
+speech_source/**/*
+!speech_source/.gitkeep
 
 # 出力先のフォルダ
 output/
