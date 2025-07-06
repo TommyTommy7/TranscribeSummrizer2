@@ -24,8 +24,8 @@ logs/
 *.log
 *.out
 
-# ソースの音声データファイルのフォルダ
-speech_source/
+# ソースの音声データファイルのフォルダ内の音声ファイル
+speech_source/*
 
 # 出力先のフォルダ
 output/
