@@ -1,6 +1,7 @@
 # %%
 import os
 from glob import glob
+from dotenv import load_dotenv
 
 # %%
 # ------------------------------------------------------------
@@ -11,6 +12,7 @@ from s1_transcribe import transcribe_audio
 from s2_summarize import summarize_transcription
 
 # %%
+load_dotenv()  # .envファイルから環境変数を読み込む
 # ------------------------------------------------------
 # 各種ファイルのパスを取得
 # ------------------------------------------------------
